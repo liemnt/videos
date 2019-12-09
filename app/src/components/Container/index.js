@@ -2,7 +2,7 @@ import React from "react";
 
 function Container({ children }) {
   return (
-    <section style={{ maxWidth: 600, margin: "auto" }}>{children}</section>
+    <section style={{ maxWidth: 800, margin: "auto" }}>{children}</section>
   );
 }
 

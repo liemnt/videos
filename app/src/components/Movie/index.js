@@ -5,9 +5,14 @@ import PropTypes from "prop-types";
 function Movie({ isLoggedIn }) {
   return (
     <article>
-      <Row type="flex" justify="space-between" align="middle">
-        <Col span={12}>Video Here</Col>
-        <Col span={12}>
+      <Row gutter={20} type="flex" justify="space-between" align="middle">
+        <Col span={10}>
+          <video
+            controls={true}
+            src="https://www.w3schools.com/tags/movie.mp4"
+          />
+        </Col>
+        <Col span={14}>
           <h3 style={{ color: "red" }}>Movie Title</h3>
           <Row type="flex" justify="space-between" align="middle">
             <Col>Shared By: someone@gmail.com</Col>
@@ -44,7 +49,9 @@ function Movie({ isLoggedIn }) {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi metus
             magna, suscipit ut fermentum sit amet, condimentum sit amet elit.
             Sed facilisis suscipit luctus. Duis nisi lacus, malesuada ac
-            hendrerit eget, condimentum vitae neque.
+            hendrerit eget, condimentum vitae neque.Fusce mattis, erat ut
+            scelerisque blandit, nisi velit fermentum lacus, ac mattis eros
+            magna id odio.
           </p>
         </Col>
       </Row>
