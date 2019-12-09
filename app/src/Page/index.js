@@ -1,12 +1,13 @@
 import React from "react";
-import Header from "../components/Header";
-import Movie from "../components/Movie";
+import Header from "../containers/Header";
+
+import Routes from "../Routes";
 
 function Page() {
   return (
     <header>
       <Header isLoggedIn={false} />
-      <Movie />
+      <Routes />
     </header>
   );
 }

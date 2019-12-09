@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 function Movie({ loggedIn }) {
   return (
-    <article style={{ maxWidth: 800 }}>
+    <article style={{ maxWidth: 800, margin: "auto" }}>
       <Row type="flex" justify="space-between" align="middle">
         <Col span={12}>Video Here</Col>
         <Col span={12}>

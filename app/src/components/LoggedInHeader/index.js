@@ -1,21 +1,31 @@
 import React from "react";
-import { Col, Row, Button } from "antd";
+import PropTypes from "prop-types";
+import { Col, Row, Button, Form } from "antd";
+const { Item: FormItem } = Form;
 
-function LoggedInHeader() {
+function LoggedInHeader({ onClickLogout, userInfo }) {
   return (
     <Row type="flex" justify="end" align="middle" gutter={15}>
-      <Col>Welcome someone@gmail.com</Col>
       <Col>
-        <Button>Share a movie</Button>
+        <FormItem>Welcome {userInfo.email}</FormItem>
       </Col>
       <Col>
-        <Button>Logout</Button>
+        <FormItem>
+          <Button>Share a movie</Button>
+        </FormItem>
+      </Col>
+      <Col>
+        <FormItem>
+          <Button onClick={onClickLogout}>Logout</Button>
+        </FormItem>
       </Col>
     </Row>
   );
 }
-
-LoggedInHeader.propTypes = {};
+LoggedInHeader.propTypes = {
+  onClickLogout: PropTypes.func.isRequired,
+  userInfo: PropTypes.object.isRequired
+};
 LoggedInHeader.defaultProps = {};
 
 export default LoggedInHeader;

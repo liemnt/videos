@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Row, Col, Typography } from "antd";
-import LoggedOutHeader from "../LoggedOutHeader";
-import LoggedInHeader from "../LoggedInHeader";
+import LoggedOutHeader from "../../containers/LoggedOutHeader";
+import LoggedInHeader from "../../containers/LoggedInHeader";
 
 const { Title } = Typography;
 
@@ -12,7 +12,7 @@ function Header({ isLoggedIn }) {
       <Row
         style={{ background: "#40a9ff", height: 80, padding: "0 20px" }}
         type="flex"
-        justify="flex-end"
+        justify="end"
         align="middle"
       >
         <Col span={12}>
@@ -27,7 +27,7 @@ function Header({ isLoggedIn }) {
             </Col>
           </Row>
         </Col>
-        <Col span={12}>
+        <Col style={{ marginTop: 16 }} span={12}>
           {isLoggedIn ? <LoggedInHeader /> : <LoggedOutHeader />}
         </Col>
       </Row>

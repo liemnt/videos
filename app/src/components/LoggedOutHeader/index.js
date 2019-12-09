@@ -1,23 +1,61 @@
 import React from "react";
-import { Input, Button, Col, Row } from "antd";
+import PropTypes from "prop-types";
+import { Input, Button, Col, Row, Form } from "antd";
 
-function LoggedOutHeader() {
+const { Item: FormItem } = Form;
+
+function LoggedOutHeader({ form, onClickLogin: onClickLoginAction }) {
+  const { validateFieldsAndScroll, getFieldDecorator } = form;
+  const onClickLogin = () => {
+    validateFieldsAndScroll((err, values) => {
+      if (!err) {
+        onClickLoginAction(values);
+      }
+    });
+  };
   return (
     <Row type="flex" justify="end" align="middle" gutter={15}>
       <Col>
-        <Input placeholder="email" />
+        <FormItem>
+          {getFieldDecorator("email", {
+            rules: [
+              {
+                required: true,
+                message: "Vui lòng nhập email"
+              },
+              {
+                type: "email",
+                message: "Vui lòng nhập đúng định dạng email"
+              }
+            ]
+          })(<Input placeholder="email" />)}
+        </FormItem>
       </Col>
       <Col>
-        <Input placeholder="password" />
+        <FormItem>
+          {getFieldDecorator("password", {
+            rules: [
+              {
+                required: true,
+                message: "Vui lòng nhập password"
+              }
+            ]
+          })(<Input placeholder="password" type="password" />)}
+        </FormItem>
       </Col>
       <Col>
-        <Button>Login / Register</Button>
+        <FormItem>
+          <Button onClick={onClickLogin}>Login / Register</Button>
+        </FormItem>
       </Col>
     </Row>
   );
 }
 
-LoggedOutHeader.propTypes = {};
+LoggedOutHeader.propTypes = {
+  onClickLogin: PropTypes.func.isRequired,
+  form: PropTypes.object.isRequired
+};
 LoggedOutHeader.defaultProps = {};
 
-export default LoggedOutHeader;
+export default Form.create()(LoggedOutHeader);
