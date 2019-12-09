@@ -8,7 +8,7 @@ function HeaderContainer({ isLoggedIn, history }) {
   return (
     <Header
       onClickLogo={() => {
-        history.push("/list");
+        history.push("/");
       }}
       isLoggedIn={isLoggedIn}
     />

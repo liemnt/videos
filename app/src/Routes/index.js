@@ -5,7 +5,7 @@ import SharePage from "../views/SharePage";
 
 export default () => (
   <Switch>
-    <Route path={"/list"} component={ListPage} />
-    <Route path={"/share"} component={SharePage} />
+    <Route path={"/"} exact component={ListPage} />
+    <Route path={"/share"} exact component={SharePage} />
   </Switch>
 );
