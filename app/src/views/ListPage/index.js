@@ -1,9 +1,10 @@
 import React from "react";
-import Movie from "../../components/Movie";
+import Movie from "../../containers/Movie";
+import Container from "../../components/Container";
 
 function ListPage(props) {
   return (
-    <section>
+    <Container>
       {Array(10)
         .fill(1)
         .map(item => {
@@ -15,7 +16,7 @@ function ListPage(props) {
             </>
           );
         })}
-    </section>
+    </Container>
   );
 }
 

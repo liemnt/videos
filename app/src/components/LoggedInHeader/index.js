@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Col, Row, Button, Form } from "antd";
 const { Item: FormItem } = Form;
 
-function LoggedInHeader({ onClickLogout, userInfo }) {
+function LoggedInHeader({ onClickLogout, userInfo, onClickShare }) {
   return (
     <Row type="flex" justify="end" align="middle" gutter={15}>
       <Col>
@@ -11,7 +11,7 @@ function LoggedInHeader({ onClickLogout, userInfo }) {
       </Col>
       <Col>
         <FormItem>
-          <Button>Share a movie</Button>
+          <Button onClick={onClickShare}>Share a movie</Button>
         </FormItem>
       </Col>
       <Col>
@@ -24,6 +24,7 @@ function LoggedInHeader({ onClickLogout, userInfo }) {
 }
 LoggedInHeader.propTypes = {
   onClickLogout: PropTypes.func.isRequired,
+  onClickShare: PropTypes.func.isRequired,
   userInfo: PropTypes.object.isRequired
 };
 LoggedInHeader.defaultProps = {};

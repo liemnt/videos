@@ -6,7 +6,7 @@ import LoggedInHeader from "../../containers/LoggedInHeader";
 
 const { Title } = Typography;
 
-function Header({ isLoggedIn }) {
+function Header({ isLoggedIn, onClickLogo }) {
   return (
     <nav>
       <Row
@@ -15,7 +15,7 @@ function Header({ isLoggedIn }) {
         justify="end"
         align="middle"
       >
-        <Col span={12}>
+        <Col onClick={onClickLogo} style={{ cursor: "pointer" }} span={12}>
           <Row gutter={15} type="flex" align="middle">
             <Col>
               <Title level={4}>Logo</Title>
@@ -36,7 +36,8 @@ function Header({ isLoggedIn }) {
 }
 
 Header.propTypes = {
-  isLoggedIn: PropTypes.bool
+  isLoggedIn: PropTypes.bool,
+  onClickLogo: PropTypes.func.isRequired
 };
 Header.defaultProps = {
   isLoggedIn: false

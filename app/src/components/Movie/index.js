@@ -2,31 +2,33 @@ import React from "react";
 import { Row, Col, Icon } from "antd";
 import PropTypes from "prop-types";
 
-function Movie({ loggedIn }) {
+function Movie({ isLoggedIn }) {
   return (
-    <article style={{ maxWidth: 800, margin: "auto" }}>
+    <article>
       <Row type="flex" justify="space-between" align="middle">
         <Col span={12}>Video Here</Col>
         <Col span={12}>
-          <h3>Movie Title</h3>
+          <h3 style={{ color: "red" }}>Movie Title</h3>
           <Row type="flex" justify="space-between" align="middle">
             <Col>Shared By: someone@gmail.com</Col>
-            <Col>
-              <Row gutter={20} type="flex" justify="end" align="middle">
-                <Col>
-                  <Icon
-                    style={{ cursor: "pointer", fontSize: "2em" }}
-                    type="like"
-                  />
-                </Col>
-                <Col>
-                  <Icon
-                    style={{ cursor: "pointer", fontSize: "2em" }}
-                    type="dislike"
-                  />
-                </Col>
-              </Row>
-            </Col>
+            {isLoggedIn && (
+              <Col>
+                <Row gutter={20} type="flex" justify="end" align="middle">
+                  <Col>
+                    <Icon
+                      style={{ cursor: "pointer", fontSize: "2em" }}
+                      type="like"
+                    />
+                  </Col>
+                  <Col>
+                    <Icon
+                      style={{ cursor: "pointer", fontSize: "2em" }}
+                      type="dislike"
+                    />
+                  </Col>
+                </Row>
+              </Col>
+            )}
           </Row>
           <Row gutter={15} type="flex" justify="start" align="middle">
             <Col>
@@ -51,7 +53,7 @@ function Movie({ loggedIn }) {
 }
 
 Movie.propTypes = {
-  loggedIn: PropTypes.bool
+  isLoggedIn: PropTypes.bool
 };
 Movie.defaultProps = {
   loggedIn: false
