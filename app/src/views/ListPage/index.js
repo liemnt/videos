@@ -7,13 +7,13 @@ function ListPage(props) {
     <Container>
       {Array(10)
         .fill(1)
-        .map(item => {
+        .map((item, index) => {
           return (
-            <>
+            <div key={index}>
               <br />
               <Movie />
               <br />
-            </>
+            </div>
           );
         })}
     </Container>
