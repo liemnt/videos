@@ -8,7 +8,7 @@ function HeaderContainer({ isLoggedIn, history }) {
   return (
     <Header
       onClickLogo={() => {
-        history.push(process.env.PUBLIC_URL + "/");
+        history.push("/");
       }}
       isLoggedIn={isLoggedIn}
     />
