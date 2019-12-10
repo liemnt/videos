@@ -11,7 +11,7 @@ store.runSaga(rootSaga);
 export default function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename={'/'}>
         <div className="app">
           <Page />
         </div>
