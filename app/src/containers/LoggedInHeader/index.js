@@ -12,7 +12,7 @@ function LoggedInHeaderContainer({ logout, userInfo, history }) {
     <LoggedInHeader
       onClickShare={() => {
         console.log("click share");
-        history.push("/share");
+        history.push(process.env.PUBLIC_URL + "/share");
       }}
       onClickLogout={logout}
       userInfo={userInfo}

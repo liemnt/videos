@@ -11,7 +11,7 @@ store.runSaga(rootSaga);
 export default function App() {
   return (
     <Provider store={store}>
-      <Router basename={'videos'}>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="app">
           <Page />
         </div>
